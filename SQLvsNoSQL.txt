@@ -1,0 +1,49 @@
+***NoSQL database***
+- NoSQL (Not Only SQL): 
+Là một loại hệ quản trị cơ sở dữ liệu được thiết kế để xử lý dữ liệu không cấu trúc hoặc bán cấu trúc, với khả năng mở rộng ngang và hiệu suất cao trong các hệ thống phân tán.
+
+NoSQL hỗ trợ nhiều mô hình dữ liệu linh hoạt và không yêu cầu lược đồ (schema) cố định trước.
+
+- Đặc điểm chính:
+Linh hoạt: Lưu trữ dữ liệu dạng key-value, document, column-family, hoặc graph.
+Mở rộng ngang: Dễ dàng thêm máy chủ để xử lý dữ liệu lớn.
+Hiệu suất cao: Tối ưu cho khối lượng dữ liệu lớn và truy vấn đơn giản.
+BASE: Ưu tiên tính sẵn sàng và nhất quán cuối cùng (eventual consistency) thay vì ACID như RDBMS.
+Không chuẩn SQL: Mỗi hệ NoSQL có ngôn ngữ truy vấn riêng.
+
+- Các loại NoSQL:
+
+Key-Value: Lưu trữ dữ liệu dưới dạng cặp khóa-giá trị (key-value pairs), giống như một từ điển hoặc bảng băm.
+	   Khóa (key) là định danh duy nhất, giá trị (value) có thể là bất kỳ dữ liệu nào.
+           Đơn giản, nhanh, và dễ mở rộng.
+	   		
+	   Truy vấn nhanh dựa trên khóa.
+	   Không hỗ trợ truy vấn phức tạp hoặc mối quan hệ.
+	   Tối ưu cho dữ liệu đơn giản và truy cập thường xuyên.
+
+Document: Lưu trữ dữ liệu dưới dạng tài liệu (documents), thường ở định dạng JSON, BSON, hoặc XML.
+	  Mỗi tài liệu là một tập hợp các cặp khóa-giá trị, có thể chứa dữ liệu lồng nhau (nested data).
+	  Linh hoạt, cho phép các tài liệu trong cùng bộ sưu tập (collection) có cấu trúc khác nhau.
+
+	  Hỗ trợ truy vấn dựa trên nội dung tài liệu (ví dụ: tìm theo trường cụ thể).
+	  Không cần lược đồ cố định, dễ dàng thay đổi dữ liệu.
+	  Phù hợp với dữ liệu bán cấu trúc.
+
+Column-Family: Lưu trữ dữ liệu theo cột thay vì hàng, tối ưu cho phân tích dữ liệu lớn.
+	       Dữ liệu được tổ chức trong các gia đình cột (column families), mỗi cột chứa nhiều hàng với khóa duy nhất.
+	       Hỗ trợ khối lượng dữ liệu lớn và truy vấn phân tích.
+
+	       Hiệu suất cao khi truy vấn trên tập hợp cột cụ thể.
+	       Mở rộng ngang dễ dàng trên hệ phân tán.
+	       Phù hợp với dữ liệu có cấu trúc lặp lại hoặc cần phân tích.
+
+Graph: Lưu trữ dữ liệu dưới dạng đồ thị, với các nút (nodes) đại diện cho thực thể và các cạnh (edges) đại diện cho mối quan hệ.
+       Tối ưu cho việc xử lý dữ liệu có mối quan hệ phức tạp.
+
+       Hiệu quả khi truy vấn các mối quan hệ (ví dụ: bạn bè trên mạng xã hội).
+       Hỗ trợ các thuật toán đồ thị như tìm đường ngắn nhất, phân tích mạng.
+       Phức tạp hơn các loại NoSQL khác về thiết kế và quản lý.
+
+***Khi nào nên dùng SQL, khi nào nên dùng NoSQL***
+Chọn SQL khi cần dữ liệu có cấu trúc, giao dịch phức tạp, và toàn vẹn dữ liệu cao.
+Chọn NoSQL khi cần xử lý dữ liệu lớn, không cấu trúc, hoặc yêu cầu mở rộng ngang và tốc độ cao.
