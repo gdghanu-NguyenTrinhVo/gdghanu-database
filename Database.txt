@@ -1,0 +1,18 @@
+***Database là gì***
+- Database(Cơ sở dữ liệu): là nơi lưu trữ và tổ chức thông tin một cách có hệ thống.
+
+- Các loại Database phổ biến hiện nay:
+Cơ sở dữ liệu quan hệ (Relational Database): là cơ sở dữ liệu quan hệ lưu trữ dữ liệu dưới dạng bảng, trong đó các bảng có mối quan hệ với nhau thông qua các khóa chính và khóa ngoại.
+
+Cơ sở dữ liệu phi quan hệ (NoSQL Database): Cơ sở dữ liệu phi quan hệ thích hợp cho việc lưu trữ dữ liệu phi cấu trúc hoặc bán cấu trúc. 
+
+Cơ sở dữ liệu phân tán (Distributed Database): Cơ sở dữ liệu phân tán là hệ thống cơ sở dữ liệu được lưu trữ trên nhiều máy tính, thường được sử dụng trong các hệ thống yêu cầu khả năng chịu tải và xử lý lớn.
+
+Cơ sở dữ liệu đồ thị (Graph Database): Graph Database lưu trữ thông tin dưới dạng các nút và cạnh, phù hợp cho việc quản lý mối quan hệ phức tạp.
+
+***Tại sao cần data base***
+Tăng cường hiệu quả quản lý dữ liệu: Database giúp lưu trữ một lượng lớn dữ liệu, sắp xếp chúng theo một trật tự dễ dàng tìm kiếm và quản lý.
+
+Hỗ trợ ra quyết định: Dữ liệu được lưu trữ trong database có thể được phân tích và sử dụng để đưa ra các quyết định quan trọng.
+
+Bảo mật và quyền truy cập: Database cho phép phân quyền người dùng, giúp bảo vệ thông tin quan trọng khỏi những truy cập trái phép.
