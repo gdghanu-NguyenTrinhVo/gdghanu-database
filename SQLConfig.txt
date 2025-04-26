@@ -1,0 +1,36 @@
+***Kiến trúc của SQL***
+
+1.Lớp kết nối (Client connectors)
+- Quản lý các kết nối từ client đến server
+- Thành phần:
+  +) Connection Pool: quản lý các kết nối, giảm thiểu thời gian thiết lập và đóng kết nối lặp đi lặp lại.
+  +) Authentication: Xác thực thông tin đăng nhập của người dùng
+  +) Security: Quản lý quyền truy cập và mã hóa dữ liệu.
+
+2.Lớp dịch vụ
+- Xử lý logic và truy vấn SQL
+- Thành phần:
+  +) Query Parser: Phân tích cú pháp truy vấn query
+  +) Query Optimizer: Tối ưu hóa truy vấn để thực thi nhanh hơn.
+  +) Excution Engine: Thực thi truy vấn đã tối ưu.
+  +) Cache/Bufer: Lưu trữ kết quả truy vấn hoặc dữ liệu tạm thời 
+
+3.Lớp lưu trữ
+-Chức năng: quản lý việc truy xuất dữ liệu vật lý
+-Thành phần: 
+  +) Storage Engines: 
+	InnoDB: Hỗ trợ giao dịch, khóa hàng, khóa ngoại, dùng file .ibd.
+	MyISAM: Nhanh, khóa bảng, file .MYD (dữ liệu), .MYI (chỉ mục).
+	Memory: Lưu trong RAM, nhanh, mất dữ liệu khi tắt server.
+	CSV, Archive, v.v.: Phù hợp cho trường hợp đặc thù.
+  +) File System: Lưu dữ liệu/chỉ mục (.ibd, .MYD, .MYI) và log (redo, undo, binary log).
+  +) Buffer/Cache: InnoDB Buffer Pool, MyISAM Key Cache để tăng tốc truy xuất.
+
+-Cách hoạt động: Nhận yêu cầu từ tầng dịch vụ, engine xử lý đọc/ghi dữ liệu từ file hoặc cache.
+		 Mỗi engine tổ chức dữ liệu khác nhau (InnoDB: B+ Tree, MyISAM: tuần tự).
+
+- Linh hoạt chọn engine theo nhu cầu.
+- Tối ưu hiệu suất cho từng trường hợp.
+- Tính năng phụ thuộc engine (InnoDB hỗ trợ giao dịch, MyISAM không).
+- Cần cấu hình phù hợp.
+
