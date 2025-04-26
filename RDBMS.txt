@@ -1,0 +1,63 @@
+**Hệ quả trị cơ sở dữ liệu(RDBMS)**
+- RDBMS: Relational Database Management System(hệ quản trị cơ sở dữ liệu quan hệ)
+
+- Table:
+Dữ liệu được cấu trúc dưới dạng các bảng chứa thông tin, một cơ sở dữ liệu thường gồm nhiều bảng tạo nên một lược đồ quan hệ (relational schema)
+
+- Field
+Đặc điểm của đối tượng được lưu trữ trong csdl, ví dụ đối với thông tin khách hàng, ta cần các trường thuộc tính như tên, địa chỉ,...
+
+-Row/ Record:
+Các hàng của bảng trong cơ sở dữ liệu, tương ứng với một đối tượng và chứa thông tin về đối tượng cần lưu trữ đó
+
+-Column:
+Một cột, là một thực thể dọc trong bảng, chứa tất cả thông tin được liên kết với một trường cụ thể trong một bảng
+
+- Keys:
+Khóa là một trường (field) đặc biệt, chúng tạo ra mối quan hệ giữa các bảng với nhau
+
+Khóa chính (Primary key): Trong mỗi bảng có một trường khóa chính và có giá trị duy nhất cho mỗi bản ghi, mang ý nghĩa định danh cho bản ghi đó.
+Khóa ngoại (Foreign keys): là một trường trong một bảng trỏ đến trường khóa chính của bảng khác, có tác dụng liên kết các bảng.
+
+-Relationals
+Mô tả cách các bảng liên kết qua khóa và chia sẻ thông tin.
+
+One-to-one: từng bản ghi trong bảng này đều tương ứng chính xác với bản ghi trong bảng kia. Vd: một người chỉ có 1 căn cước công dân duy nhất.
+
+One-to-many: mỗi bản ghi trong bảng có thể liên kết với nhiều bản ghi trong bảng khác. Vd: Một người có thể có nhiều địa chỉ nhà
+
+Many-to-many: tương tự như one-to-many nhưng là hai chiều. Vd: một người có thể có nhiều địa chỉ và ngược lại trong một địa chỉ có thể có nhiều người sinh sống.
+
+-NULL
+Giá trị NULL của một bảng xác định rằng trường đã bị để trống trong khi tạo bản ghi. Nó là khác hoàn toàn với giá trị 0 hoặc một trường mà chứa khoảng trống (space)
+
+- Database Schema: 
+Bản thiết kế cho cơ sở dữ liệu, mô tả cách ta sẽ lưu trữ thông tin và thông tin đó sẽ liên quan đến nhau như thế nào. Bao gồm quy tắc cho các trường, mối quan hệ các bảng, ...
+
+-Indexes: 
+Lập chỉ mục cho một hoặc nhiều trường giúp tìm kiếm trong csdl trở nên dễ dàng và nhanh hơn.
+
+-Đảm bảo 4 thuộc tính ACID (atomicity, consistency, isolation, và durability):
+
+Atomicity: Giao dịch gồm nhiều thao tác chỉ thành công khi toàn bộ thao tác thành công
+
+Consistency: Dữ liệu cần trở lại trạng thái trước khi giao dịch nếu gặp lỗi (rollback)
+
+Isolation: Thực thi các giao dịch độc lập với nhau một cách đồng thời
+
+Durability: Đảm bảo dữ liệu giao dịch được lưu trữ trong cả trường hợp lỗi hệ thống
+
+- Ưu điểm:
+Hoạt động với dữ liệu có cấu trúc, được định hướng bảng và hàng nên rất trực quan.
+
+Các mối quan hệ trong hệ thống có những ràng buộc, điều này thúc đẩy mức độ toàn vẹn dữ liệu cao.
+
+Cung cấp khả năng viết các truy vấn SQL (ngôn ngữ truy vấn có cấu trúc) phức tạp để thao tác dữ liệu, phân tích và báo cáo dữ liệu một cách mạnh mẽ
+
+- Nhược điểm:
+Một nhược điểm lớn ta dễ dàng có thể thấy đó là khó sửa đổi, mở rộng do số lượng kết nối ngày một tăng cao.
+
+Cần phải định nghĩa trước về cấu trúc dữ liệu trước khi thêm dữ liệu vào.
+
+- Các cơ sở dữ liệu quan hệ phổ biến:
+  Microsoft SQL Server, Oracle Database, MySQL và IBM DB2 
