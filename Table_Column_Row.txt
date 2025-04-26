@@ -1,0 +1,21 @@
+***Khái niệm bảng cột hàng , record***
+
+- Table(Bảng): Bảng là một cấu trúc dữ liệu dùng để lưu trữ thông tin, bao gồm các cột và hàng.
+
+-Column(cột): Cột là tập hợp các giá trị thuộc cùng một thuộc tính, đặc điểm của đối tượng trong bảng.
+
+-Row(Hàng): Hàng là tập hợp các giá trị tương ứng với một đối tượng hoặc bản ghi cụ thể trong bảng
+
+-Record(Bản ghi): Là một tên gọi khác của hàng (row), đại diện cho một bản ghi dữ liệu hoàn chỉnh trong bảng. Record chứa tất cả thông tin liên quan đến một đối tượng cụ thể trong bảng
+
+Ví dụ:
+Bảng lưu các ID, Name, Age của từng người(đối tượng)
+
+|ID | Name          | Age   |
+|---|---------------|-------|
+|1  |     ABC	    | 20    |
+|2  |     XYZ       | 23    |
+
+-> Cột: ID, Name, Age
+-> Hàng/Record: (1, ABC, 20); (2, XYZ, 23)
+ 
