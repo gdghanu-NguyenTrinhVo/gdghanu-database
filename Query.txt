@@ -1,0 +1,12 @@
+***Query***
+- Database query là một truy vấn hành động hay có ý nghĩa là action query cũng có thể hiểu nó là một dạng truy xuất dữ liệu
+
+- Các loại query phổ biến hiện nay:
+Select Query (truy vấn lựa chọn)
+Crosstab Query (truy vấn bảng chéo)
+Make Table Query (truy vấn tạo lập bảng)
+Append Query (truy vấn chèn thêm)
+Update Query (truy vấn cập nhật)
+Delete Query (truy vấn xóa các dữ liệu)
+
+ 
