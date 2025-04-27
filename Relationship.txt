@@ -1,0 +1,29 @@
+***Relationship***
+- Relationship:
+Là sự liên kết giữa các bảng trong cơ sở dữ liệu dựa trên các cột chung, giúp tổ chức và truy xuất dữ liệu
+
+- Các mối quan hệ:
+One-to-One: Một bản ghi trong bảng A chỉ liên kết với một bản ghi trong bảng B và ngược lại (ví dụ: Một người chỉ có một số CMND).
+
+One-to-Many: Một bản ghi trong bảng A có thể liên kết với nhiều bản ghi trong bảng B, nhưng một bản ghi trong bảng B chỉ liên kết với một bản ghi trong bảng A (ví dụ: Một khách hàng có nhiều đơn hàng).
+
+Many-to-Many: Nhiều bản ghi trong bảng A có thể liên kết với nhiều bản ghi trong bảng B, thường được triển khai qua bảng trung gian (ví dụ: Sinh viên và Môn học, liên kết qua bảng Đăng ký môn học).
+
+***Primary Key***
+
+- Khóa chính (Primary Key): Là một cột (hoặc tập hợp cột) trong bảng có giá trị duy nhất cho mỗi bản ghi, dùng để định danh bản ghi đó.
+
+- Đặc điểm:
+  Không được trùng lặp (unique).
+  Không được để trống (NOT NULL).
+  Thường là ID hoặc mã số
+
+***Foreign Key***
+
+- Là một cột (hoặc tập hợp cột) trong một bảng, tham chiếu đến khóa chính của bảng khác, tạo mối liên kết giữa hai bảng.
+
+- Đặc điểm:
+  Giá trị trong khóa ngoại phải khớp với giá trị trong khóa chính của bảng được tham chiếu hoặc là NULL (nếu cho phép).
+  Đảm bảo tính toàn vẹn tham chiếu (referential integrity).
+  Khóa ngoại có thể null: Nếu mối quan hệ giữa hai bảng không bắt buộc (optional), khóa ngoại có thể được để null.
+  Khóa ngoại không thể null: Nếu mối quan hệ là bắt buộc (mandatory), khóa ngoại phải có giá trị hợp lệ trỏ đến một bản ghi trong bảng cha.
