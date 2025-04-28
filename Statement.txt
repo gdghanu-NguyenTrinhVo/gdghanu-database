@@ -1,0 +1,38 @@
+***Câu lệnh select***
+- Câu lệnh SELECT được sử dụng để lấy dữ liệu từ cơ sở dữ liệu.
+  Dữ liệu trả về được lưu trữ trong bảng kết quả, được gọi là tập kết quả.
+
+- Cú pháp: 
+SELECT column1, column2, ...
+FROM table_name
+- Câu lệnh SELECT chỉ định các cột mà bạn muốn truy xuất từ ​​bảng. Có thể chỉ định một hoặc nhiều cột, được phân tách bằng dấu ,.
+- Câu lệnh FROM chỉ định tên của bảng mà bạn muốn lấy dữ liệu từ đó
+
+SELECT * FROM table_name;
+- Được sử dụng để lấy toàn bộ dữ liệu từ bảng được chỉ định 
+
+SELECT DISTINCT column1, column2, ...
+FROM table_name;
+- Câu lệnh SELECT DISTINCT được sử dụng để chỉ trả về các giá trị riêng biệt (khác nhau).
+
+
+***Câu lệnh WHERE***
+- Câu lệnh WHERE được sử dụng để lọc các bản ghi.
+- Câu lệnh này được sử dụng để chỉ trích xuất những bản ghi đáp ứng một điều kiện cụ thể.
+
+- Cú pháp:
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+
+- Các toán tử có thể dùng với câu lệnh WHERE:
+  =	Bằng	
+  >	Lớn hơn	
+  <	Nhỏ hơn	
+  >=	Lớn hơn hoặc bằng	
+  <=	Nhỏ hơn hoặc bằng	
+  <>	Không bằng (khác). Trong một số phiên bản SQL, toán tử này có thể được viết là !=	
+  BETWEEN   Giữa một phạm vi nhất định	
+  LIKE	Tìm kiếm dựa trên mẫu tương tự	
+  IN   Để chỉ định nhiều giá trị có thể có cho một cột
+       VD:SELECT * FROM Customers WHERE City IN ('Paris','Mexico'); dùng để tìm các giá trị 'Paris' và 'Mexico' ở cột City trong bảng Customers 	 
