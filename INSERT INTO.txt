@@ -1,0 +1,20 @@
+***INSERT INTO***
+- Câu lệnh INSERT INTO được sử dụng để chèn bản ghi mới vào bảng.
+- Có thể viết câu lệnh INSERT INTO theo hai cách:
+ 1. Chỉ định cả tên cột và giá trị cần chèn:
+ Cú pháp: 
+     INSERT INTO table_name (column1, column2, column3, ...)
+     VALUES (value1, value2, value3, ...);
+
+ VD: INSERT INTO Customers (Customer Name, City, Country)
+     VALUES ('Cardinal', 'Stavanger', 'Norway');
+
+ 2. Nếu thêm giá trị cho tất cả các cột của bảng, không cần phải chỉ định tên cột và phải đảm bảo thứ tự của các giá trị giống với thứ tự  của các cột trong bảng.
+ Cú pháp:
+     INSERT INTO table_name
+     VALUES (value1, value2, value3, ...);
+ 
+ VD: INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+     VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+ HOẶC :
+     INSERT INTO Customers VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
