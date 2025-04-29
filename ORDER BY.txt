@@ -1,0 +1,20 @@
+***ORDER BY***
+- Từ khóa ORDER BY được sử dụng để sắp xếp tập kết quả theo thứ tự tăng dần hoặc giảm dần.
+- Từ khóa ORDER BY sắp xếp các bản ghi theo thứ tự tăng dần theo mặc định. Sử dụng từ khóa DESC để sắp xếp các bản ghi theo thứ tự giảm dần
+
+- Cú pháp: 
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+
+- VD: SELECT * FROM Customers ORDER BY Country; -> chọn tất cả khách hàng từ bảng "Customers", được sắp xếp theo cột "Country".
+      
+      SELECT * FROM Customers ORDER BY Country DESC;-> chọn tất cả khách hàng từ bảng "Customers", được sắp xếp  giảm dần theo cột "Country".
+
+- Sắp xếp với nhiều cột:
+  SELECT * FROM Customers ORDER BY Country, CustomerName;
+-> chọn tất cả khách hàng từ bảng "Customers", được sắp xếp theo cột "Country". Nếu Customers có cùng "Country" thì sẽ sắp xếp theo cột "CustomerName"
+
+  SELECT * FROM Customers ORDER BY Country ASC, CustomerName DESC;
+-> chọn tất cả khách hàng từ bảng "Customers", được sắp xếp tăng dần theo cột "Country". Nếu Customers có cùng "Country" thì sẽ sắp xếp giảm dần theo cột "CustomerName"
+
