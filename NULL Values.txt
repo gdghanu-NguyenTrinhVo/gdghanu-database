@@ -1,0 +1,28 @@
+***NULL Values***
+- NULL là giá trị đặc biệt được dùng để đại diện cho các giá trị thuộc tính chưa xác định hay không áp dụng cho một bộ dữ liệu
+- Nếu một trường trong bảng là tùy chọn, có thể chèn bản ghi mới hoặc cập nhật bản ghi mà không cần thêm giá trị vào trường này. Sau đó, trường sẽ được lưu với giá trị NULL.
+- Giá trị NULL khác với giá trị bằng không hoặc trường chứa khoảng trắng. Trường có giá trị NULL là trường bị để trống trong quá trình tạo bản ghi.
+
+- Không thể kiểm tra giá trị NULL bằng các toán tử so sánh như =, <, or <>
+- Để kiểm tra giá trị NULL, sử dụng toán tử IS NULL hoặcISIS NOT NULL
+- IS NULL: kiểm tra các giá trị rỗng
+- IS NOT NULL: kiểm tra các giá trị không rỗng
+
+- Cú pháp với IS NULL:
+   SELECT column_names
+   FROM table_name
+   WHERE column_name IS NULL;
+
+    VD:SELECT CustomerName, ContactName, Address
+       FROM Customers
+       WHERE Address IS NULL;
+
+- Cú pháp với IS NOT NULL:
+   SELECT column_names
+   FROM table_name
+   WHERE column_name IS NOT NULL;
+
+    VD:SELECT CustomerName, ContactName, Address
+              FROM Customers
+	      WHERE Address IS NOT NULL;
+
