@@ -26,13 +26,48 @@ FROM table_name
 WHERE condition;
 
 - Các toán tử có thể dùng với câu lệnh WHERE:
-  =	Bằng	
-  >	Lớn hơn	
-  <	Nhỏ hơn	
-  >=	Lớn hơn hoặc bằng	
-  <=	Nhỏ hơn hoặc bằng	
-  <>	Không bằng (khác). Trong một số phiên bản SQL, toán tử này có thể được viết là !=	
-  BETWEEN   Giữa một phạm vi nhất định	
-  LIKE	Tìm kiếm dựa trên mẫu tương tự	
-  IN   Để chỉ định nhiều giá trị có thể có cho một cột
-       VD:SELECT * FROM Customers WHERE City IN ('Paris','Mexico'); dùng để tìm các giá trị 'Paris' và 'Mexico' ở cột City trong bảng Customers 	 
+  "="	Bằng 
+
+VD: SELECT * FROM Products WHERE Price = 18;
+	
+  ">"	Lớn hơn	
+VD: SELECT * FROM Products WHERE Price > 30;
+
+  "<"	Nhỏ hơn	
+VD: SELECT * FROM Products WHERE Price < 30;
+
+  ">="	Lớn hơn hoặc bằng 
+VD: SELECT * FROM Products WHERE Price >= 30;
+	
+  "<="	Nhỏ hơn hoặc bằng 
+VD: SELECT * FROM Products WHERE Price <= 30;
+	
+  "<>"   Không bằng (khác). Trong một số phiên bản SQL, toán tử này có thể được viết là != 
+VD: SELECT * FROM Products WHERE Price <> 18;
+	
+  "BETWEEN"   Giữa một phạm vi nhất định	
+VD: SELECT * FROM Products WHERE Price BETWEEN 50 AND 60;
+
+  "LIKE"	Tìm kiếm dựa trên mẫu tương tự	
+VD: SELECT * FROM Customers WHERE City LIKE 's%'; (tìm các bản ghi có giá trị trong cột City bắt đầu bằng s)
+
+  "IN"   Để chỉ định nhiều giá trị có thể có cho một cột
+VD:SELECT * FROM Customers WHERE City IN ('Paris','Mexico'); dùng để tìm các giá trị 'Paris' và 'Mexico' ở cột City trong bảng Customers
+
+***AND, OR and NOT***
+- Mệnh đề WHERE có thể kết hợp với các toán tử AND, OR và NOT
+- Các toán tử AND và OR được sử dụng để lọc các bản ghi có nhiều hơn một điều kiện
+
+- Toán tử AND: trả về true nếu cả hai điều kiện đều đúng
+VD: SELECT * FROM Customers WHERE Country = 'Germany' AND City = 'Berlin';
+
+- Toán tử OR: trả về true nếu một trong hai điều kiện đúng
+VD: SELECT * FROM Customers WHERE City = 'Berlin' OR City = 'Stuttgart';
+
+- Toán tử NOT: trả về true nếu điều kiện sai
+VD : SELECT * FROM Customers WHERE NOT Country = 'Germany';
+
+- Sử dụng dấu ngoặc đơn để nhóm các điều kiện và kiểm soát thứ tự đánh giá.
+VD: SELECT * FROM customers WHERE city = 'Berlin' and (name = 'A' or name = 'B');
+
+  	 
