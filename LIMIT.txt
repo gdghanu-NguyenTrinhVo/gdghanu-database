@@ -1,0 +1,22 @@
+***LIMIT Clause***
+- Mệnh đề LIMIT được sử dụng để giới hạn số lượng bản ghi trả về.
+- Cần mệnh đề LIMIT vì nếu trả về số lượng bản ghi quá lớn sẽ ảnh hưởng đến hiệu suất
+- Cú pháp:
+   SELECT column_name
+   FROM table_name
+   WHERE condition
+   LIMIT number;
+
+- Mệnh đề LIMIT sẽ lấy từ bản ghi đầu tiên cho đến khi lấy đủ số lượng.
+
+- OFFSET được dùng để lấy bản ghi từ vị trí bất kì với số lượng giới hạn.
+- Cú pháp: 
+   SELECT column_name
+   FROM table_name
+   WHERE condition
+   LIMIT number1 OFFSET number2;
+
+- number1 là số lượng bản ghi trả về
+- number2 đánh dấu vị trí bắt đầu lấy bản ghi. Vị trí bắt đầu là number2 + 1.
+
+    
