@@ -1,0 +1,19 @@
+***Wildcards***
+-Ký tự đại diện(Wildcard): được sử dụng trong toán tử LIKE, thay thế cho một hoặc nhiều ký tự trong một chuỗi.
+- Ký tự %: biểu thị cho không hoặc nhiều ký tự.
+- Ký tự _: biểu thị cho một ký tự.
+  VD: WHERE column_name LIKE 'a%': tìm các giá trị bắt đầu bằng "a"
+      WHERE column_name LIKE '%a': tìm các giá trị kết thúc với "a"
+      WHERE column_name LIKE '%ha%': tìm các giá trị có chứa "ha" ở bất kì vị trị
+      WHERE column_name LIKE '_r%': tìm các giá trị có "r" ở vị trí thứ hai
+      WHERE column_name LIKE 'a_%_%': tìm các giá trị bắt đầu bằng "a" và có ít nhất 3 kí tự
+      WHERE column_name LIKE 'a%b': tìm các giá trị bắt đầu bằng "a" và kết thúc bằng b
+
+***LIKE Operator***
+- Toán tử LIKE: được dùng trong mệnh đề WHERE để tìm kiếm một mẫu cụ thể trong cột.
+- Cú pháp:
+  SELECT column1, column2, ...
+  FROM table_name
+  WHERE column_name LIKE pattern;
+
+- Toán tử NOT LIKE: đảo ngược hoạt động của toán tử LIKE.
