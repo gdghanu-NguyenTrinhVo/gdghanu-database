@@ -1,0 +1,35 @@
+
+***FUNCTION***
+- MIN() Function: trả về giá trị nhỏ nhất trong cột được chọn.
+- Cú pháp:
+   SELECT MIN(column_name)
+   FROM table_name
+   WHERE condition;
+
+- MAX() Function: trả về giá trị lớn nhất trong cột được chọn.
+- Cú pháp:
+   SELECT MAX(column_name)
+   FROM table_name
+   WHERE condition;
+
+- COUNT() Function: trả về số lượng bản ghi trong một bảng thỏa mãn điều kiện nhất định.
+- Cú pháp:
+   SELECT COUNT(column_name)
+   FROM table_name
+   WHERE condition;
+
+- AVG() Function: trả về giá trị trung bình của các giá trị trong một cột.
+- Cột chứa các giá trị kiểu số mới trả về giá trị trung bình. Nếu không phải kiểu số thì giá trị trung bình là 0.
+- Cú pháp:
+   SELECT AVG(column_name)
+   FROM table_name
+   WHERE condition; 
+
+- SUM() Function: trả về tổng của các giá trị trong một cột.
+- Cột chứa các giá trị số mới trả về tổng giá trị. Nếu không phải kiểu số thì tổng giá trị là 0.
+- Cú pháp:
+   SELCET SUM(column_name)
+   FROM table_name
+   WHERE condition;
+
+
