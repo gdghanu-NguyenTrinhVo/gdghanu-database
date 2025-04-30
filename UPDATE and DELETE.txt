@@ -1,0 +1,21 @@
+***UPDATE Statement***
+- Câu lệnh UPDATE được sử dụng để sửa đổi các bản ghi hiện có trong một bảng.
+- Cú pháp: 
+   UPDATE table_name
+   SET column1 = value1, column2 = value2, ...
+   WHERE condition;
+
+- Mệnh đề WHERE chỉ định bản ghi nào cần được cập nhật. Nếu không có mệnh đề WHERE, tất cả các bản ghi trong bảng sẽ được cập nhật.
+
+- Mệnh đề WHERE xác định số lượng bản ghi được cập nhật.
+
+***DELETE statement***
+- Câu lệnh DELETE được sử dụng để xóa các bản ghi hiện có trong một bảng.
+- Cú pháp:
+   DELETE table_name
+   WHERE condition;
+
+- Mệnh đề WHERE chỉ định bản ghi nào cần xóa. Nếu không có mệnh đề WHERE, tất cả bản ghi trong bảng sẽ bị xóa.
+
+
+
