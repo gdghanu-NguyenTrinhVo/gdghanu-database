@@ -1,0 +1,18 @@
+***BETWEEN Operator***
+- Toán tử BETWEEN: trả về giá trị nằm trong một phạm vi nhất định. Các giá trị có thể là số, văn bản hoặc thời gian.
+- Cú pháp:
+   SELECT column_name
+   FROM table_name
+   WHERE column_name BETWEEN value_1 AND value_2;
+- value_1 là giá trị khởi đầu và value_2 là giá trị kết thúc.
+=> value_1 <= giá trị trả về <= value_2.
+
+- VD:
+   SELECT * FROM Products
+   WHERE Price BETWEEN 10 AND 20;
+-> trả về các bản ghi trong bảng Products có giá trị trong cột Price nằm trong khoảng từ 10 đến 20.
+
+- Toán tử NOT BETWEEN trả về các giá trị nằm ngoài khoảng giá trị chỉ định.
+
+-  Kiểu dữ liệu text chia khoảng dựa trên thứ tự bảng chữ cái
+  
