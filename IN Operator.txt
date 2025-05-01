@@ -1,0 +1,22 @@
+***IN Operator***
+- Toán tử IN: cho phép chỉ định nhiều giá trị cho mệnh đề WHERE. Toán tử IN là viết tắt của nhiều điều kiện OR.
+- Cú pháp: 
+   SELECT column_name
+   FROM table_name
+   WHERE column_name IN (value_1, value_2, value_3, ...);
+
+hoặc
+   SELECT column_name
+   FROM table_name
+   WHERE column_name IN (SELECT STATEMENT);
+
+- VD:
+   SELECT * FROM Customers
+   WHERE Country IN ('Germany', 'France', 'UK');
+-> Tìm các Customers có Country là Germany, France, UK.
+
+   SELECT * FROM Customers
+   WHERE Country IN (SELECT Country FROM Suppliers);
+-> Tìm các bản ghi trong bảng Customers có Country giống trong bảng Suppliers.
+
+- Toán tử NOT IN đảo ngược hoạt động của toán tử IN.
