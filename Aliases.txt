@@ -1,0 +1,35 @@
+***Aliases***
+- Aliases : tên tạm thời(bí danh) được sử dụng để đặt tên tạm thời cho một bảng hoặc 1 cột trong bảng, được dùng để làm cho tên cột dễ đọc hơn.
+- Tên tạm thời chỉ tồn tại trong thời gian hoạt động của truy vấn.
+- Tên tạm thời  tạo bằng từ khóa AS.
+
+- Cú pháp:
+ +)Cho tên cột:
+   SELECT column_name AS aliases_name
+   FROM table_name;
+VD: 
+  SELECT CustomerID AS ID, CustomerName AS Customer
+  FROM Customers;
+
+- Có thể gán nhiều cột vào 1 bí danh tạo thành 1 cột cho bản ghi trả về sau khi thực hiện truy vấn.
+VD:
+  SELECT CustomerName, CONCAT_WS(', ', Address, PostalCode, City, Country) AS Address
+  FROM Customers;
+-> ', ' : các thông tin được ngăn cách bằng dấu ,
+   Address, PostalCode, City, Country: các thông tin được lấy ra để tạo thành cột Address
+
+ +)Cho tên bảng:
+   SELECT column_name
+   FROM table_name AS aliases_name; 
+
+VD: 
+  SELECT o.OrderID, o.OrderDate, c.CustomerName
+  FROM Customers AS c, Orders AS o
+  WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
+
+- Bí danh được sử dụng khi:
+  +) Có nhiều hơn 1 bảng tham gia truy vấn
+  +) Tên cột dài và khó đọc
+  +) Có 2 hoặc nhiều cột kết hợp với nhau
+
+  
