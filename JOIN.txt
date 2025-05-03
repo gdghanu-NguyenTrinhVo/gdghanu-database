@@ -1,0 +1,83 @@
+***JOIN***
+- Mệnh đề JOIN: được sử dụng để kết hợp các bản ghi từ hai hoặc nhiều bảng dựa trên các cột có liên quan của chúng (các cột chứa thông tin giống nhau ở hai bảng).
+
+***INNER JOIN***
+- Từ khóa INNER JOIN: được sử dụng để lấy các bản ghi có trong cả hai bảng
+- Cú pháp:
+  SELECT column_name
+  FROM table1_name
+  INNER JOIN table2_name
+  ON table1.column_name = table2.column_name;
+
+VD: 
+    SELECT o.OrderID, c.CustomerName
+    FROM Orders AS o
+    INNER JOIN Customers AS c 
+    ON o.CustomerID = c.CustomerID; 
+
+Với nhiều hơn 2 bảng:
+   SELECT o.OrderID, c.CustomerName, s.ShipperName
+   FROM ((Orders AS o
+   INNER JOIN Customers AS c 
+   ON Orders.CustomerID = Customers.CustomerID)
+   INNER JOIN Shippers AS s
+   ON Orders.ShipperID = Shippers.ShipperID);
+
+***LEFT JOIN***
+- Từ khóa LEFT JOIN: trả về kết quả tất cả các hàng từ bảng bên trái ngay cả khi không tìm thấy hàng phù hợp trong bảng bên phải. Trường hợp không tìm thấy kết quả phù hợp trong bảng bên phải, kết quả sẽ là Null.
+- Cú pháp:
+   SELECT column_name
+   FROM table1
+   LEFT JOIN table2
+   ON table1.column_name = table2.column_name;
+
+VD:
+   SELECT c.CustomerName, o.OrderID
+   FROM Customers AS c
+   LEFT JOIN Orders AS o
+   ON c.CustomerID = o.CustomerID;
+
+***RIGHT JOIN***
+- Từ khóa RIGHT JOIN: trả về kết quả các cột từ bảng bên phải ngay cả khi không tìm thấy hàng phù hợp trong bảng bên trái. Trường hợp không tìm thấy kết quả phù hợp trong bảng bên trái, kết quả là Null.
+- Cú pháp:
+   SELECT cloumn_name
+   FROM table1_name
+   RIGHT JOIN table2_name
+   ON table1.column_name = table2.column_name;
+
+VD:
+   SELECT o.OrderID, e.LastName, e.FirstName
+   FROM Orders AS o
+   RIGHT JOIN Employees AS e 
+   ON o.EmployeeID = e.EmployeeID;
+
+***CROSS JOIN***
+- Từ khóa CROSS JOIN: trả về tất cả bản ghi từ cả 2 bảng ngay cả khi không tìm thấy hàng phù hợp trong bảng còn lại.
+- Bảng 1 có A bảng ghi, bảng 2 có B bản ghi -> CROSS JOIN sẽ tạo ra A*B bản ghi.
+- Cú pháp: 
+   SELECT column_name
+   FROM table1
+   CROSS JOIN table2;
+VD:
+   SELECT Customers.CustomerName, Orders.OrderID
+   FROM Customers
+   CROSS JOIN Orders;
+
+***USING***
+- Mệnh đề “ON” được sử dụng để khớp với các bản ghi giữa bảng.
+- Mệnh đề “Using” cũng có thể được sử dụng cho cùng một mục đích. Sự khác biệt là nó cần phải có tên giống hệt nhau giữa các cột trong cả hai bảng.
+- Cú pháp:
+  Hai bảng A và B có chung cột column_join
+-> SELECT column_name
+   FROM tableA
+   JOIN CLAUSE taleB
+   USING (column_join);
+    
+VD:
+    SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+    FROM Orders
+    LEFT JOIN Employees
+    USING (EmployeeID);
+
+
+        
