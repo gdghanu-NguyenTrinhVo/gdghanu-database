@@ -1,0 +1,18 @@
+***HAVING***
+- Mệnh đề HAVING: là một điều kiện được sử dụng trong SQL sau mệnh đề GROUP BY. Nó được sử dụng để lọc các nhóm dữ liệu dựa trên hàm tính toán (aggregate function)
+- Mục đích chính của HAVING là lọc các nhóm dữ liệu sau khi đã thực hiện tính toán.
+
+- Cú pháp:
+   SELECT column_name
+   FROM table_name
+   GROUP BY column_name
+   HAVING aggregate_condition;
+
+VD:
+   SELECT COUNT(CustomerID), Country
+   FROM Customers
+   GROUP BY Country
+   HAVING COUNT(CustomerID) > 5;
+
+- WHERE sử dụng để lọc các hàng của dữ liệu gốc trong khi HAVING sử dụng để lọc các hàng của kết quả sau GROUP BY.
+- Các hàm tính toán (Aggregate Functions) ví dụ: SUM, AVG, MIN, MAX, … chỉ có thể được sử dụng trong câu lệnh HAVING.
