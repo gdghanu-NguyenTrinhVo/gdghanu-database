@@ -1,0 +1,27 @@
+***UNION Operator***
+- Toán tử UNION: kết hợp các kết quả từ nhiều truy vấn SELECT thành một tập kết quả hợp nhất.
+- Cú pháp:
+  SELECT column_name FROM table1
+  UNION
+  SELECT cloumn_name FROM table2;
+
+- Mỗi câu lệnh SELECT trong UNION phải có cùng số cột
+- Những cột tương ứng trong câu lệnh SELECT phải có sự tương đồng về kiểu dữ liệu
+- Từng cột trong câu lệnh SELECT phải được sắp xếp theo thứ tự tương ứng.
+
+VD: 
+   SELECT City FROM Customers
+   UNION
+   SELECT City FROM Suppliers
+
+- UNION chỉ lấy các giá trị riêng biệt (mỗi giá trị chỉ xuất hiện 1 lần)
+- Để lấy các giá trị trùng lặp cần sử dụng UNION ALL
+- Cú pháp:
+  SELECT column_name FROM table1
+  UNION
+  SELECT cloumn_name FROM table2;
+
+VD:
+   SELECT City FROM Customers
+   UNION
+   SELECT City FROM Suppliers
