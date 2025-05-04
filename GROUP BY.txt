@@ -1,0 +1,13 @@
+***GROUP BY***
+- Câu lệnh GROUP BY: được sử dụng để nhóm các hàng có cùng một bản ghi thuộc một trường nhất định nào đó. Ví dụ như "tìm số lượng khách hàng ở mỗi quốc gia"
+- Câu lệnh GROUP BY thường được sử dụng với các hàm tổng hợp (COUNT(), MAX(), MIN(), SUM(), AVG()) để nhóm tập kết quả theo một hoặc nhiều cột.
+
+- Cú pháp:
+   SELECT column_name
+   FROM table_name
+   GROUP BY column_name;
+VD : 
+   SELECT COUNT(CustomnerID), Country
+   FROM Customers
+   GROUP BY Country;
+
