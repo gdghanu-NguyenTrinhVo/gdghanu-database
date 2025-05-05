@@ -1,0 +1,14 @@
+***EXISTS***
+- Toán tử EXISTS được sử dụng để kiểm tra sự tồn tại của bất kỳ bản ghi nào trong truy vấn phụ.
+
+- Toán tử EXISTS trả về TRUE nếu truy vấn phụ trả về một hoặc nhiều bản ghi.
+
+- Cú pháp:
+   SELECT column_name
+   FROM table_name
+   WHERE EXISTS
+   (SELECT column_name FROM table_name WHERE condition);
+VD:
+   SELECT SupplierName
+   FROM Suppliers
+   WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
