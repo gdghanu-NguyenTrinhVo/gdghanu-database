@@ -1,0 +1,42 @@
+***ANY, ALL Operator***
+- Toán tử ANY và toán tử ALL cho phép bạn thực hiện so sánh giữa một giá trị cột đơn và một phạm vi các giá trị khác.
+
+- Toán tử ANY trả về kết quả là một giá trị kiểu boolean và trả về TRUE nếu có bất kỳ giá trị con nào khớp với điều kiện.
+- Any có nghĩa là điều kiện sẽ đúng nếu hoạt động đúng với bất kỳ giá trị nào trong phạm vi.
+- Any có nghĩa là điều kiện sẽ đúng nếu hoạt động đúng với bất kỳ giá trị nào trong phạm vi.
+
+- Cú pháp:
+    SELECT column_name
+    FROM table_name
+    WHERE column_name Operator ANY
+     (SELECT column_name
+      FROM table_name
+      WHERE condition);
+- Operator phải là các toán tử so sánh (comparison operator)
+- VD:
+   SELECT ProductName
+   FROM Products
+   WHERE ProductID = ANY
+    (SELECT ProductID
+     FROM OrderDetails
+     WHERE Quantity = 10);
+
+- Toán tử ALL trả về kết quả là một giá trị Boolean và trả về TRUE nếu tất cả các giá trị con khớp với điều kiện.
+- Thường được dùng với các mệnh đề SELECT, WHERE và HAVING.
+- All có nghĩa là điều kiện sẽ đúng nếu toán tử là đúng với tất cả giá trị trong phạm vi.
+
+- Cú pháp:
+   SELECT column_name
+   FROM table_name 
+   WHERE column_name Operator ALL
+     (SELECT column_name
+      FROM table_name
+      WHERE condition);
+
+-VD: 
+   SELECT ProductName
+   FROM Products
+   WHERE ProductID = ALL
+    (SELECT ProductID
+     FROM OrderDetails
+     WHERE Quantity = 10);
