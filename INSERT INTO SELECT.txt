@@ -1,0 +1,26 @@
+***INSERT INTO SELECT***
+- Câu lệnh INSERT INTO SELECT sao chép dữ liệu từ một bảng và chèn vào một bảng khác.
+
+- Các kiểu dữ liệu trong bảng nguồn và bảng đích phải khớp nhau.
+
+**NOTE: Các bản ghi hiện có trong bảng đích không bị ảnh hưởng.
+        Các cột không được điền dữ liệu sẽ chứa NULL
+
+- Cú pháp:
+ +) Sao chép toàn bộ cột của bảng 2 và chèn vào bảng 1 
+   INSERT INTO table1
+   SELCET*FROM table2
+   WHERE condition;
+ VD: 
+   INSERT INTO Customers 
+   SELECT * FROM Suppliers;
+   WHERE City = "TOKYO";
+
+ +) Sao chép cột chỉ định từ bảng 2
+   INSERT INTO table1 (column1, column2, column3, ...)
+   SELECT column1, column2, column3, ... FROM table2
+   WHERE condition;
+VD:   
+   INSERT INTO Customers (CustomerName, City, Country)
+   SELECT SupplierName, City, Country FROM Suppliers
+   WHERE Country='Germany';
