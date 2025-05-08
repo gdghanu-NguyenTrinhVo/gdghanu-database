@@ -1,0 +1,13 @@
+***NULL Function***
+- Hàm IFNULL() trả về một giá trị thay thế nếu một biểu thức là NULL.
+- Cú pháp:
+   IFNULL( expression, value_if_null )
+-> expression: biểu thức kiểm tra NULL
+   value_if_null: giá trị trả về nếu biểu thức là NULL
+
+- Hàm IFNULL sẽ trả về biểu thức, nếu biểu thức không phải là NULL.
+- Hàm IFNULL sẽ trả về value_if_null, nếu biểu thức là NULL.
+
+- Hàm COALESCE() trả về giá trị không null đầu tiên trong danh sách.
+- Cú pháp:
+   COALESCE(value1, value2, ...., value_n)
