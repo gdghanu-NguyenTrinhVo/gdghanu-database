@@ -1,0 +1,44 @@
+***Stored Procedures***
+- Stored Procedures là một mã SQL đã được lưu trữ và có thể tái sử dụng
+- Nếu có một query phải viết lại nhiều lần, có thể lưu nó dưới dạng Stored Procedures, sau đó chỉ cần gọi nó để thực thi.
+- Stored Procedures có thể được truyền tham số nên nó có thể hoạt động dựa trên giá trị tham số được truyền vào.
+
+- Cú pháp:
+ +) Tạo Procedure:
+      CREATE PROCEDURE procedure_name
+      AS
+      sql_tatement
+      GO;
+
+ +) Thực thi producer:
+      EXEC procedure_name;
+
+VD: 
+   CREATE PROCEDURE SelectAllCustomers
+   AS
+   SELECT * FROM Customers
+   GO;
+
+   EXEC SelectAllCustomers;
+
+- Stored Procedure với một tham số:
+   CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+   AS
+   SELECT * FROM Customers WHERE City = @City
+   GO;
+
+   EXEC SelectAllCustomers @City = 'London';
+  
+- Stored Proceedure với nhiều tham số
+   CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+   AS
+   SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+   GO;
+
+   EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+
+- Thay đổi Stored Procedure:
+   ALERT PROCEDURE procedure_name
+   AS
+   sql_tatement
+   GO;
