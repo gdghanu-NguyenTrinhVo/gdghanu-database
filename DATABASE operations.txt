@@ -1,0 +1,24 @@
+***CREATE DATABASE***
+- Câu lệnh CREATE DATABASE được sử dụng để tạo một database mới
+- Cú pháp: 
+   CREATE DATABASE database_name;
+
+***DROP DATABASE***
+- Câu lệnh DROP DATABASE được sử dụng để xóa một database hiện có
+- Cú pháp:
+   DROP DATABASE database_name;
+
+***BACKUP DATABASE***
+- Câu lệnh BACKUP DATABASE được sử dụng để tạo một bản sao lưu cho database hiện có
+- Cú pháp:
+   BACKUP DATABASE database_name
+   TO 'file path + database_name';
+   WITH DIFFERENTIAL;
+VD: 
+  BACKUP DATABASE testDB
+  TO DISK = 'D:\backups\testDB.sql';
+
+- Backup with DIFFERENTIAL là loại sao lưu chỉ lưu lại những thay đổi dữ liệu kể từ lần sao lưu full backup gần nhất.
+
+
+
