@@ -1,0 +1,76 @@
+***CREATE TABLE***
+- Câu lệnh CREATE TABLE được dùng để tạo một bảng mới trong cơ sở dữ liệu.
+- Cú pháp:
+   CREATE TABLE table_name(
+      column1 datatype,
+      column2 datatype,
+      column3 datatype,
+      ......
+      );
+
+VD: 
+   CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+    );
+
+- Có thể rạo 1 bảng mới từ 1 bảng có sẵn
+- Cú pháp: 
+    CREATE TABLE new_table_name AS
+    SELECT column1, column2, ...
+    FROM existing_table_name
+    WHERE ...;
+VD: 
+   CREATE TABLE TestTable AS
+   SELECT customername, contactname
+   FROM customers;
+
+***DROP TABLE***
+- Câu lệnh DROP TABLE được dùng để xóa một bảng hiện có trong cơ sở dữ liệu
+- Cú pháp: 
+    DROP TABLE table_name;
+
+VD: 
+   DROP TABLE Student;
+
+- Câu lệnh TRUNCATE TABLE sẽ xóa các bản ghi trong bảng mà không xóa bảng.
+- Cú pháp:
+   TRUNCATE TABLE table_name;
+
+***ALTER TABLE***
+- Câu lệnh ALTER TABLE được dùng để thêm, xóa hoặc chỉnh sửa một cột trong bảng và cũng cho phép người dùng đổi lại tên hoặc xây dựng lại các phân vùng, vô hiệu hoặc kích hoạt giới hạn
+
+- Cú pháp:
+  +) Thêm cột:
+       ALTER TABLE table_name
+       ADD column_name datatype;
+
+VD: 
+   ALTER TABLE Customers
+   ADD Email varchar(255);
+  +)  Xóa cột:
+       ALTER TABLE table_name
+       DROP COLUMN column_name;
+
+VD:
+   ALTER TABLE Customers
+   DROP COLUMN Email;
+
++) Đổi tên cột:
+       ALTER TABLE table_name
+       RENAME COLUMN old_name to new_name;
+
++) Thay đổi kiểu dữ liệu trong cột:
+ Trong MySQL:
+   ALTER TABLE table_name
+   MODIFY COLUMN column_name datatype;
+
+Trong SQL SERVER: 
+   ALTER TABLE table_name
+   ALTER COLUMN column_name datatype;
+
+
+   
