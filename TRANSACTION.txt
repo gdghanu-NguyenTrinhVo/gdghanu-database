@@ -1,0 +1,87 @@
+***TRANSACTION***
+- TRANSACTION trong SQL là tiến trình thực hiện một nhóm các câu lệnh SQL. Các câu lệnh này được thực thi một cách tuần tự và độc lập.
+- Một Transaction được thực hiện thành công khi tất cả câu lệnh đều thành công, khi đó tất cả các thay đổi dữ liệu được thực hiện trong Transaction được lưu vào cơ sở dữ liệu.
+- Nếu chỉ một trong số đó thất bại thì toàn bộ tiến trình sẽ thất bại, đồng nghĩa với việc dữ liệu phải rollback về trạng thái ban đầu (dữ liệu được khôi phục về trạng thái trước khi thực hiện Transaction).
+
+- Các tính chất của một transaction - ACID
++) Atomicity (nguyên tử tính): tất cả các thao tác phải được thực hiện hoàn toàn hoặc khong thao tác nào được thực hiện.
+
++) Consistency (nhất quán): transaction phải chuyển từ trạng thái nhất quán này sang trạng thái nhất quán khác -> tất cả các ràng buộc (khoá chính khoá ngoại...) phải được giữ nguyên
+
++) Isolation (cô lập): các transaction độc lập với nhau, các thay đổi của transaction này không được thấy bởi transaction khác cho đến khi transaction kia hoàn thành.
+
++) Durability (Bền vững): khi một transaction được commit thì tất cả dữ liệu là vĩnh viễn.
+
+- Tự động thực hiện giao tác : Mỗi câu lệnh đơn được thực hiện và tự động commit ngay sau khi nó hoàn thành -> không cần phải viết bất kỳ câu lệnh cụ thể nào để bắt đầu và kết thúc các transaction. Mỗi câu lệnh được xem là 1 transaction, đây là chế độ mặc định cho SQL Server Database Engine.
+
+- Các transaction rõ ràng : Mọi transaction bắt đầu một cách rõ ràng với câu lệnh BEGIN TRANSACTION và kết thúc với giao tác ROLLBACK hoặc COMMIT.
+
+- Các transaction ẩn : Một transaction mới sẽ tự động bắt đầu khi transaction trước đó hoàn thành và mọi transaction được hoàn thành một cách rõ ràng bằng cách sử dụng câu lệnh ROLLBACK hoặc COMMIT.
+
+- Vòng đời của một transaction trong cơ sở dữ liệu giao dịch (transactional database) trải qua từ khi bắt đầu đến khi kết thúc qua các bước như sau:
+
++) Transaction bắt đầu: Hệ thống cơ sở dữ liệu chuẩn bị mọi thứ cần thiết để thực hiện transaction.
+
++) Thực thi các truy vấn trong transaction: Đây là giai đoạn thao tác dữ liệu, bao gồm việc đọc và ghi. Dữ liệu sẽ được lưu trữ tạm thời trong bộ nhớ và chưa commit vào CSDL.
+
++) Transaction được commit nếu không có lỗi xảy ra: Nếu tất cả các thao tác được thực hiện thành công, transaction sẽ được kết thúc với việc commit, tức là các thay đổi trở nên vĩnh viễn trong cơ sở dữ liệu và không thể quay lại.
+
++) Transaction rollback nếu xảy ra lỗi: Nếu có lỗi trong quá trình thực hiện, tất cả các thay đổi trước đó sẽ bị hủy bỏ và dữ liệu được trả về trạng thái ban đầu trước khi transaction bắt đầu.
+
+***Lệnh kiểm soát transaction***
+1. BEGIN TRANSACTION
+- Câu lệnh BEGIN TRANSACTION đánh dấu điểm bắt đầu của một transaction.
+- Cú pháp:
+ BEGIN;
+
+mySQL sẽ khởi tạo một transaction mới, cho phép thực hiện một chuỗi các thao tác cơ sở dữ liệu (như INSERT, UPDATE, DELETE) mà không tự động lưu thay đổi cho đến khi bạn gọi COMMIT hoặc hủy bỏ bằng ROLLBACK.
+
+VD:
+   BEGIN;
+   UPDATE accounts SET balance = balance - 100 WHERE account_id = 1;
+   UPDATE accounts SET balance = balance + 100 WHERE account_id = 2;
+
+2. COMMIT TRANSACTION
+- Câu lệnh COMMIT được sử dụng để lưu các thay đổi gọi bởi một transaction với cơ sở dữ liệu.
+- Lệnh COMMIT lưu tất cả các transaction vào cơ sở dữ liệu kể từ khi lệnh COMMIT hoặc ROLLBACK cuối cùng.
+- Cú pháp:
+   COMMIT;
+
+VD:
+   DELETE FROM CUSTOMERS
+   WHERE AGE = 25;
+   COMMIT;
+
+3. Lệnh ROLLBACK
+- Lệnh ROLLBACK được sử dụng để hoàn tác các transaction chưa được lưu vào cơ sở dữ liệu. 
+- Lệnh này chỉ có thể được sử dụng để hoàn tác các transaction kể từ khi lệnh COMMIT hoặc ROLLBACK cuối cùng được phát hành.
+- Cú pháp:
+    ROLLBACK;
+
+VD: 
+   DELETE FROM CUSTOMERS
+   WHERE AGE = 25;
+   ROLLBACK;
+
+4. Lệnh SAVEPOINT
+- SAVEPOINT là một điểm trong một transaction có thể cuộn transaction trở lại một điểm nhất định mà không quay trở lại toàn bộ transaction.
+- Cú pháp:
+   SAVEPOINT SAVEPOINT_NAME;
+
+- Lệnh này chỉ phục vụ trong việc tạo ra SAVEPOINT trong số tất cả các câu lệnh transaction. Lệnh ROLLBACK được sử dụng để hoàn tác một nhóm các transaction.
+
+- Cú pháp để cuộn lại SAVEPOINT:
+   ROLLBACK TO SAVEPOINT_NAME;
+
+- Lệnh SAVEPOINT RELEASE được sử dụng để loại bỏ một SAVEPOINT mà bạn đã tạo ra.
+
+- Cú pháp:
+    RELEASE SAVEPOINT SAVEPOINT_NAME;
+
+5. Lệnh SET TRANSACTION
+- Lệnh SET TRANSACTION có thể được sử dụng để bắt đầu một transaction cơ sở dữ liệu. Lệnh này được sử dụng để chỉ định các đặc tính cho transaction sau. Ví dụ có thể chỉ định một transaction chỉ được đọc hoặc đọc viết.
+
+- Cú pháp:
+  SET TRANSACTION [ READ WRITE | READ ONLY ];
+
+
