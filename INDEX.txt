@@ -1,0 +1,29 @@
+***INDEX***
+- Index(chỉ mục) được sử dụng để truy suất dữ liệu nhanh hơn so với cách khác
+- Người dùng không thể thấy chỉ mục và chỉ mục chỉ được sử dụng để tăng tốc tìm kiếm/ truy vấn.
+- Cập nhật bảng có chỉ mục mất nhiều thời gian hơn so với cập nhật bảng không có chỉ mục (vì chỉ mục cũng cần được cập nhật) -> chỉ tạo chỉ mục trên các cột sẽ được tìm kiếm thường xuyên.
+
+- Tạo chỉ mục trên một bảng(các giá trị có thể trùng lặp):
+    CREATE INDEX index_name
+    ON table_name (column1, column2, column3, ...);
+
+VD: 
+     CREATE INDEX idx_pname
+     ON Persons (LastName, FirstName);
+
+- Tạo chỉ mục duy nhất trên bảng(các giá trị không được trùng lặp):
+    CREATE UNIQUE INDEX index_name
+    ON table_name (column1, column2, ...);
+
+VD:
+    CREATE UNIQUE INDEX idx_name
+    ON Persons (ID);
+
+- Câu lệnh DROP INDEX được dùng để xóa index trong một bảng.
+- Cú pháp:
+ +) Trong MySQL:
+   ALTER TABLE table_name
+   DROP INDEX index_name;
+
+ +) Trong SQL Server;
+   DROP INDEX table_name.index_name;
